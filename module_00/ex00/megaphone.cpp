@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 15:53:28 by atrouill          #+#    #+#             */
-/*   Updated: 2021/07/13 16:09:44 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/10/08 13:29:30 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,28 @@
 void upper_str(char *s)
 {
 	int		i;
-	size_t len;
 
-	len = strlen(s);
-	for (i = 0; i < len; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		std::cout << std::toupper(s[i]);
+		std::cout << (char)std::toupper(s[i]);
+		i++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int		i;
 
 	if (argc != 1)
 	{
-		for (size_t i = 1; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			upper_str(argv[i]);
+			if (i < argc)
+				std::cout << " ";
 		}
+		std::cout << "\n";
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
