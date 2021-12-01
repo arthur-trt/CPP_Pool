@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:17:07 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/01 17:39:57 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:15:55 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,32 @@ std::string	Contact::getDarkestSecret( void ) const
 ** Setter
 */
 
-void	Contact::setFirstName( const std::string firstname )
+bool	Contact::setFirstName( const std::string firstname )
 {
 	if (firstname.empty() == false)
+	{
 		this->_first_name = firstname;
+		return (true);
+	}
 	else
+	{
 		std::cerr << "First name cant be empty !" << std::endl;
+		return (false);
+	}
 }
 
-void	Contact::setLastName( const std::string lastname )
+bool	Contact::setLastName( const std::string lastname )
 {
 	if (lastname.empty() == false)
+	{
 		this->_last_name = lastname;
+		return (true);
+	}
 	else
+	{
 		std::cerr << "Last name can't be empty" << std::endl;
+		return (false);
+	}
 }
 
 void	Contact::setNickName( const std::string nickname )
@@ -82,12 +94,18 @@ void	Contact::setNickName( const std::string nickname )
 	this->_nick_name = nickname;
 }
 
-void	Contact::setPhoneNumber( const std::string phonenumber )
+bool	Contact::setPhoneNumber( const std::string phonenumber )
 {
 	if (phonenumber.length() == 10)
+	{
 		this->_phone_number = phonenumber;
+		return (true);
+	}
 	else
+	{
 		std::cerr << "Wrong length for phone number" << std::endl;
+		return (false);
+	}
 }
 
 void	Contact::setDarkestSecret( const std::string secret )

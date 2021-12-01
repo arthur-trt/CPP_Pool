@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:31:02 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/01 17:23:12 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:16:18 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ public:
 	/*
 	 * Setter
 	 */
-	void	setFirstName( const std::string firstname );
-	void	setLastName( const std::string lastname );
+	bool	setFirstName( const std::string firstname );
+	bool	setLastName( const std::string lastname );
 	void	setNickName( const std::string nickname );
-	void	setPhoneNumber( const std::string phonenumber );
+	bool	setPhoneNumber( const std::string phonenumber );
 	void	setDarkestSecret( const std::string darkestsecret );
 
 };
