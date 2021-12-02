@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:17:07 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/01 18:15:55 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:57:58 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,101 +14,37 @@
 # include <string>
 # include "Contact.Class.hpp"
 
-Contact::Contact( void )
+Contact::Contact ( void )
 {
-	std::cout << "Constructor called" << std::endl;
-	this->_first_name = "";
-	this->_last_name = "";
-	this->_nick_name = "";
+	this->_is_set = false;
 	return ;
 }
 
-Contact::~Contact( void )
+Contact::~Contact ( void )
 {
-	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-/*
-**	Getter
-*/
-std::string	Contact::getFirstName( void ) const
-{
-	return this->_first_name;
-}
 
-std::string	Contact::getLastName( void ) const
+bool	Contact::setFields( void )
 {
-	return this->_last_name;
-}
+	std::string	tmp;
 
-std::string	Contact::getNickName( void ) const
-{
-	return this->_nick_name;
-}
-
-std::string	Contact::getPhoneNumber( void ) const
-{
-	return this->_phone_number;
-}
-
-std::string	Contact::getDarkestSecret( void ) const
-{
-	return this->_darkest_secret;
-}
-
-/*
-** Setter
-*/
-
-bool	Contact::setFirstName( const std::string firstname )
-{
-	if (firstname.empty() == false)
+	for (int i = first_name; i <= darkest_secret; i++)
 	{
-		this->_first_name = firstname;
-		return (true);
+		std::cout << "* " << this->_fields_name[i] << " : " << std::ends;
+		std::getline(std::cin, tmp);
+		this->_fields.map::insert({ this->_fields_name[i], tmp });
 	}
-	else
-	{
-		std::cerr << "First name cant be empty !" << std::endl;
-		return (false);
-	}
+	return (true);
 }
 
-bool	Contact::setLastName( const std::string lastname )
+void	Contact::getFields( void ) const
 {
-	if (lastname.empty() == false)
+		for (int i = first_name; i <= darkest_secret; i++)
 	{
-		this->_last_name = lastname;
-		return (true);
+		std::cout << "* " << this->_fields_name[i] << " : " << std::ends;
+		std::cout << 
 	}
-	else
-	{
-		std::cerr << "Last name can't be empty" << std::endl;
-		return (false);
-	}
-}
-
-void	Contact::setNickName( const std::string nickname )
-{
-	this->_nick_name = nickname;
-}
-
-bool	Contact::setPhoneNumber( const std::string phonenumber )
-{
-	if (phonenumber.length() == 10)
-	{
-		this->_phone_number = phonenumber;
-		return (true);
-	}
-	else
-	{
-		std::cerr << "Wrong length for phone number" << std::endl;
-		return (false);
-	}
-}
-
-void	Contact::setDarkestSecret( const std::string secret )
-{
-	this->_darkest_secret = secret;
+	return (true);
 }

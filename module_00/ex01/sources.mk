@@ -2,8 +2,9 @@
 
 ## SOURCES ##
 
-SOURCES		+=                      		\
-		sources/main.cpp               	\
-		sources/Contact.Class.cpp      	\
+SOURCES		+=                        		\
+		sources/Phonebook.Class.cpp      	\
+		sources/main.cpp                 	\
+		sources/Contact.Class.cpp        	\
 
 
