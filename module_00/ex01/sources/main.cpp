@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:33:35 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/08 18:51:21 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/09 12:35:00 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	search_cmd(Phonebook phonebook)
 		{
 			std::cout << ">> ";
 			getline(std::cin, tmp, '\n');
+			if (std::cin.eof() == 1)
+				return ;
 			if (tmp.compare("BACK") == 0)
 				return;
 		} while ((index = to_int(tmp.c_str()) - 1) == -1);
@@ -64,6 +66,8 @@ int	main(void)
 	{
 		std::cout << "> " << std::ends;
 		getline(std::cin, input, '\n');
+		if (std::cin.eof() == 1)
+				return (0);
 		if (input.compare("ADD") == 0)
 			add_cmd(phonebook);
 		else if (input.compare("SEARCH") == 0)
