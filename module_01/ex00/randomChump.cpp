@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 15:58:37 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/13 12:10:17 by atrouill         ###   ########.fr       */
+/*   Created: 2021/12/13 11:24:00 by atrouill          #+#    #+#             */
+/*   Updated: 2021/12/13 13:36:25 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,11 @@
 #include <iostream>
 #include <string>
 
-Zombie::Zombie()
+void	randomChump(std::string name)
 {
-	return ;
-}
+	Zombie	zombie;
 
-Zombie::~Zombie(void)
-{
-	std::cout << "Zombie " << this->_name << " destroyed" << std::endl;
-	return ;
-}
-
-void	Zombie::announce(void) const
-{
-	std::cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << std::endl;
-	return ;
-}
-
-void	Zombie::setName(std::string name)
-{
-	this->_name = name;
+	zombie.setName(name);
+	zombie.announce();
 	return ;
 }
