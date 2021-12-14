@@ -9,6 +9,8 @@
 
 !Makefile
 
+!*/tests/*
+
 .vscode
 */objs
 */obj
