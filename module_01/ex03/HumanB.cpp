@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 14:44:45 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/14 12:09:20 by atrouill         ###   ########.fr       */
+/*   Created: 2021/12/14 11:42:26 by atrouill          #+#    #+#             */
+/*   Updated: 2021/12/14 11:44:42 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-# define HUMAN_A_HPP
+#include "HumanB.hpp"
+#include "Weapon.hpp"
+#include <string>
+#include <iomanip>
+#include <iostream>
 
-# include "Weapon.hpp"
-# include <iostream>
-# include <string>
-
-class HumanA
+HumanB::HumanB(std::string name) : _name(name)
 {
-	private:
-		std::string				_name;
-		Weapon					&_weapon;
+	return ;
+}
 
-	public:
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA(void);
+HumanB::~HumanB(void)
+{
+	return ;
+}
 
-		void					attack(void);
-};
+void	HumanB::attack(void)
+{
+	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+}
 
-
-#endif
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weapon = &weapon;
+}
