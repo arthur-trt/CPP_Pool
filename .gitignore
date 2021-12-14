@@ -9,7 +9,7 @@
 
 !Makefile
 
-!*/tests/*
+!module_01/ex04/tests/*
 
 .vscode
 */objs
