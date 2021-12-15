@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 16:17:32 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/14 16:24:13 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:56:10 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		std::cerr << "Usage: ./Karen <LOGLEVEL>" << std::endl;
-		return (EXIT_FAILURE);
+		return (1);
 	}
 
 	switch (get_arg(argv[1]))
@@ -52,17 +52,17 @@ int	main(int argc, char *argv[])
 			std::cout << "[ DEBUG ]" << std::endl;
 			karen.complain("DEBUG");
 			std::cout << std::endl;
-
+			__attribute__((fallthrough));
 		case INFO:
 			std::cout << "[ INFO ]" << std::endl;
 			karen.complain("INFO");
 			std::cout << std::endl;
-
+			__attribute__((fallthrough));
 		case WARNING:
 			std::cout << "[ WARNING ]" << std::endl;
 			karen.complain("WARNING");
 			std::cout << std::endl;
-
+			__attribute__((fallthrough));
 		case ERROR:
 			std::cout << "[ ERROR ]" << std::endl;
 			karen.complain("ERROR");
