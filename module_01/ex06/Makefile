@@ -1,16 +1,18 @@
 # Generated with GenMake
 # Arthur-TRT - https://github.com/arthur-trt/genMake
-# genmake v1.0
+# genmake v1.1
 
 #Compiler and Linker
-CC					:= clang++
+CC					:= clang
+CXX					:= c++
 ifeq ($(shell uname -s),Darwin)
-	CC				:= clang++
+	CC				:= gcc
+	CXX				:= g++
 endif
 
 #The Target Binary Program
-TARGET				:= karen
-TARGET_BONUS		:= karen-bonus
+TARGET				:= KarenFilter
+TARGET_BONUS		:= KarenFilter-bonus
 
 BUILD				:= release
 
@@ -29,11 +31,11 @@ OBJECTS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEX
 OBJECTS_BONUS		:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES_BONUS:.$(SRCEXT)=.$(OBJEXT)))
 
 #Flags, Libraries and Includes
-cflags.release		:= -Wall -Werror -Wextra -std=c++98
-cflags.valgrind		:= -Wall -Werror -Wextra -std=c++98 -DDEBUG -ggdb
-cflags.debug		:= -Wall -Werror -Wextra -std=c++98 -DDEBUG -ggdb -fsanitize=address -fno-omit-frame-pointer
+cflags.release		:= -Wall -Werror -Wextra
+cflags.valgrind		:= -Wall -Werror -Wextra -DDEBUG -ggdb
+cflags.debug		:= -Wall -Werror -Wextra -DDEBUG -ggdb -fsanitize=address -fno-omit-frame-pointer
 CFLAGS				:= $(cflags.$(BUILD))
-CPPFLAGS			:= $(cflags.$(BUILD))
+CPPFLAGS			:= $(cflags.$(BUILD)) -std=c++98
 
 lib.release			:= 
 lib.valgrind		:= $(lib.release)
@@ -96,12 +98,12 @@ fclean: clean
 # Link
 $(TARGETDIR)/$(TARGET): $(OBJECTS)
 	@mkdir -p $(TARGETDIR)
-	$(CC) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
+	$(CXX) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
 
 # Link Bonus
 $(TARGETDIR)/$(TARGET_BONUS): $(OBJECTS_BONUS)
 	@mkdir -p $(TARGETDIR)
-	$(CC) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
+	$(CXX) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
 
 $(BUILDIR):
 	@mkdir -p $@
@@ -110,8 +112,8 @@ $(BUILDIR):
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(dir $@)
 	@$(ECHO) "$(TARGET)\t\t[$(C_PENDING)⏳$(C_RESET)]"
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(INC) -c -o $@ $<
-	@$(CC) $(CFLAGS) $(CPPFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(BUILDDIR)/$*.$(DEPEXT)
+	$(CXX) $(CFLAGS) $(CPPFLAGS) $(INC) -c -o $@ $<
+	@$(CXX) $(CFLAGS) $(CPPFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(BUILDDIR)/$*.$(DEPEXT)
 	@$(ERASE)
 	@$(ERASE)
 	@cp -f $(BUILDDIR)/$*.$(DEPEXT) $(BUILDDIR)/$*.$(DEPEXT).tmp

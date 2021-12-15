@@ -6,11 +6,11 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 15:58:36 by atrouill          #+#    #+#             */
-/*   Updated: 2021/12/14 16:13:32 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/14 16:17:05 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Karen.Class.hpp"
+# include "Karen.hpp"
 
 int	main(void)
 {

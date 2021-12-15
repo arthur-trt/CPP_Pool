@@ -2,8 +2,8 @@
 
 ## . ##
 
-SOURCES		+=            		\
-		main.cpp             	\
-		Karen.Class.cpp      	\
+SOURCES		+=           		\
+		Karen.cpp           	\
+		main.cpp            	\
 
 
