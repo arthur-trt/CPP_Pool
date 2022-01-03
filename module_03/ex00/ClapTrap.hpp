@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 11:35:34 by arthur            #+#    #+#             */
-/*   Updated: 2021/12/19 12:01:20 by arthur           ###   ########.fr       */
+/*   Updated: 2022/01/03 11:32:37 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CLAPTRAP_HPP
 
 # include <string>
-
 class ClapTrap
 {
 private:
