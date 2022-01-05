@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:46:55 by arthur            #+#    #+#             */
-/*   Updated: 2021/12/16 14:47:19 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/12/20 10:03:10 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ bool			Fixed::operator>( const Fixed &other ) const
 
 bool			Fixed::operator<( const Fixed &other ) const
 {
-	return (this->_rawbits < other._rawbits);
+	return (this->_rawbits < other._rawbits   );
 }
 
 bool			Fixed::operator>=( const Fixed &other ) const
