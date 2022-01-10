@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:52:53 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/05 16:49:23 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/10 08:39:10 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,33 @@ Brain::Brain( void )
 	}
 }
 
+Brain::Brain( Brain const & other )
+{
+	for (size_t i = 0; i < NB_IDEAS; i++)
+	{
+		this->ideas[i] = other.getIdea(i);
+	}
+	return ;
+}
+
 Brain::~Brain( void )
 {
 	return;
 }
 
-std::string const	&Brain::getIdea( size_t index )
+Brain	&Brain::operator=( Brain const & rhs )
+{
+	if (this != &rhs)
+	{
+		for (size_t i = 0; i < NB_IDEAS; i++)
+		{
+			this->ideas[i] = rhs.getIdea(i);
+		}
+	}
+	return *this;
+}
+
+std::string const	&Brain::getIdea( size_t index ) const
 {
 	std::ostringstream	s;
 

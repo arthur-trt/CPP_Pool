@@ -2,13 +2,11 @@
 
 ## . ##
 
-SOURCES		+=            		\
-		Dog.cpp              	\
-		Brain.cpp            	\
-		WrongAnimal.cpp      	\
-		Animal.cpp           	\
-		Cat.cpp              	\
-		main.cpp             	\
-		WrongCat.cpp         	\
+SOURCES		+=           		\
+		Dog.cpp             	\
+		Brain.cpp           	\
+		Animal.cpp          	\
+		Cat.cpp             	\
+		main.cpp            	\
 
 

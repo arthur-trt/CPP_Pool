@@ -6,38 +6,58 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:15:32 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/05 16:52:49 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/10 09:55:32 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 #include <string>
 #include <iostream>
+#include <iomanip>
 
-int	main(void)
+static void	usage(void)
 {
-	//const Animal		*test = new Animal("Test");
-	//const Animal		*kitty = new Cat();
-	//const Animal		*doggo = new Dog();
-	//const WrongAnimal	*catWrong = new WrongCat();
+	std::cerr << "Usage : ./animals <numbers of animals>" << std::endl;
+	std::cerr << "Numbers of animals must be at least 2" << std::endl;
+}
 
-	//std::cout << "kitty is : " << kitty->getType() << std::endl;
-	//std::cout << "doggo is : " << doggo->getType() << std::endl;
-	//std::cout << "catWrong is : " << catWrong->getType() << std::endl;
+int	main(int argc, char **argv)
+{
+	size_t	nb_ani;
 
-	//test->makeSound();
-	//kitty->makeSound();
-	//doggo->makeSound();
-	//catWrong->makeSound();
-
-	//delete test;
-	//delete kitty;
-	//delete doggo;
-	//delete catWrong;
+	if (argc != 2)
+	{
+		usage();
+		return (1);
+	}
+	nb_ani = atoi(argv[1]);
+	if (nb_ani < 2)
+	{
+		usage();
+		return (1);
+	}
+	Animal	*animals[nb_ani];
+	for (size_t i = 0; i < nb_ani; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	std::cout << "DEEP COPY :" << std::endl;
+	Cat	copy(* (Cat *)animals[0]);
+	for (size_t i = 0; i < NB_IDEAS; i++)
+	{
+		std::cout << "Original : " << ((Cat *)animals[0])->getBrain()->getIdea(i) << std::endl;
+		std::cout << "Copy     : " << copy.getBrain()->getIdea(i) << std::endl;
+	}
+	std::cout << "END COPY" << std::endl;
+	for (size_t i = 0; i < nb_ani; i++)
+	{
+		delete animals[i];
+	}
 	return (0);
 }

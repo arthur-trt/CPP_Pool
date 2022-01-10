@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:41:26 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/05 16:26:22 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/10 08:39:08 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ class Brain
 {
 	public:
 		Brain( void );
-		//Brain( Brain const & other );
+		Brain( Brain const & other );
 		~Brain( void );
 
-		//Brain	&	operator=( Brain const & rhs );
+		Brain	&	operator=( Brain const & rhs );
 
-		std::string	const	&	getIdea( size_t index );
+		std::string	const	&	getIdea( size_t index ) const;
 
 	private:
 		std::string	ideas[NB_IDEAS];
