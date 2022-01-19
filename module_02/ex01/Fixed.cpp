@@ -6,12 +6,12 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:46:55 by arthur            #+#    #+#             */
-/*   Updated: 2021/12/16 11:42:28 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:34:26 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
+#include <cmath>
 /*
 **	Constructors
 */
@@ -26,13 +26,15 @@ Fixed::Fixed( const int value )
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_rawbits = value << this->_fracbits;
+//	this->_rawbits = 
 	return ;
 }
 
 Fixed::Fixed( const float value )
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_rawbits = (int)(value * (1 << this->_fracbits));
+	//this->_rawbits = (int)roundf((value * (1 << this->_fracbits)));
+	this->_rawbits = (value * 256.0);
 	return ;
 }
 
@@ -90,6 +92,7 @@ Fixed&			Fixed::operator=( const Fixed &other )
 
 std::ostream&	operator<<( std::ostream &out, const Fixed &inst )
 {
-	out << inst.toFloat();
+//	out << inst.toFloat();
+	out << inst.getRawBits() / 256.0;
 	return (out);
 }
