@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 12:11:00 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/19 12:19:14 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:13:22 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class	AMateria
 		AMateria();
 
 	protected:
-
 		std::string	_type;
+
 	public:
 		AMateria( std::string const & type );
 		AMateria( AMateria const & other );

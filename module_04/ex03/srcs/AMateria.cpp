@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:38:00 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/19 12:18:35 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:31:13 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ AMateria	&AMateria::operator=( AMateria const & rhs )
 {
 	this->_type = rhs._type;
 	return (*this);
+}
+
+AMateria::~AMateria( )
+{
+	return ;
 }
 
 

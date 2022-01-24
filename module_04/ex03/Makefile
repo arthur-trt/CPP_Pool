@@ -1,6 +1,6 @@
 # Generated with GenMake
 # Arthur-TRT - https://github.com/arthur-trt/genMake
-# genmake v1.1.3
+# genmake v1.1.4
 
 #Compiler and Linker
 CC					:= clang

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.Class.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.Class.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 13:02:16 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/24 11:37:20 by atrouill         ###   ########.fr       */
+/*   Created: 2022/01/24 09:51:14 by atrouill          #+#    #+#             */
+/*   Updated: 2022/01/24 12:11:50 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_CLASS_HPP
-# define CURE_CLASS_HPP
+#ifndef MATERIASOURCE_CLASS_HPP
+# define MATERIASOURCE_CLASS_HPP
 
+# include "IMateriaSource.Class.hpp"
 # include "AMateria.Class.hpp"
+# define	MAX_MATERIA	4
 
 class AMateria;
 
-class Cure : public AMateria
+class MateriaSource : public IMateriaSource
 {
 	private:
-
+		AMateria	*_materia[MAX_MATERIA];
 	public:
-		Cure();
-		Cure ( Cure const & other );
-		Cure & operator=( Cure const & rhs );
-		~Cure();
+		MateriaSource();
+		MateriaSource( MateriaSource const & other );
+		~MateriaSource();
 
-		AMateria*	clone( void ) const;
-		void		use( ICharacter & target );
+		MateriaSource	&operator=( MateriaSource const & rhs );
+
+		void			learnMateria( AMateria *materia );
+		AMateria		*createMateria( std::string const & type );
 };
 
 #endif

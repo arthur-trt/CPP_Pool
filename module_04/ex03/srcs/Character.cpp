@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:58:17 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/19 12:12:56 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/24 10:39:33 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ Character	&Character::operator=( Character const & rhs )
 		else
 			this->_inventory[i] = NULL;
 	}
-	return ;
+	return (*this);
 }
 
 /*

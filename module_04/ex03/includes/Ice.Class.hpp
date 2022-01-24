@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:46:58 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/19 12:15:56 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/24 10:46:16 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ICE_CLASS_HPP
 
 # include "AMateria.Class.hpp"
+
+class AMateria;
 
 class	Ice : public AMateria
 {

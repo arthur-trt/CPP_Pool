@@ -6,12 +6,13 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:58:15 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/19 12:17:05 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/24 11:49:47 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Ice.Class.hpp"
+#include "AMateria.Class.hpp"
 
 Ice::Ice() : AMateria("ice")
 {
