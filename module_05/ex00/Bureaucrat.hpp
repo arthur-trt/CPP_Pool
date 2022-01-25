@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:13:14 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/24 14:36:19 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/25 12:05:34 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ class Bureaucrat
 
 	private:
 		Bureaucrat();
-		std::string	_name;
-		int			_grade;
+		const std::string	_name;
+		int					_grade;
 
 	class GradeTooHighException : public std::exception
 	{
