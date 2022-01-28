@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 20:39:22 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 20:43:16 by arthur           ###   ########.fr       */
+/*   Updated: 2022/01/28 20:56:25 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
+
+PresidentialPardonForm::PresidentialPardonForm( std::string target ) : AForm::AForm(target + "_presidential_pardon", 25, 5)
+{
+	this->_target = target;
+}
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm::AForm()
 {
