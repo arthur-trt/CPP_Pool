@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:27:29 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/28 12:26:53 by arthur           ###   ########.fr       */
+/*   Updated: 2022/01/28 20:49:46 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(void)
 {
-	Bureaucrat	tmp("Super", 50);
+	Bureaucrat	tmp("Super", 137);
 	RobotomyRequestForm	f("test");
 
 	std::cout << tmp << std::endl;
@@ -34,14 +34,7 @@ int	main(void)
 	
 	std::cout << f << std::endl;
 
-	try
-	{
-		f.execute(tmp);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}	
+	tmp.executeForm(f);
 
 	return (0);
 }

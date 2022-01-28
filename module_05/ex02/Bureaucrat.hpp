@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:13:14 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/28 10:13:57 by arthur           ###   ########.fr       */
+/*   Updated: 2022/01/28 20:45:46 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class Bureaucrat
 		void				decGrade( int dec ) throw(Bureaucrat::GradeTooLowExcepetion);
 		void				decGrade( void ) throw(Bureaucrat::GradeTooLowExcepetion);
 		void				signForm( AForm * f ) const;
+		void				executeForm( AForm const & f ) const;
 
 		std::string			getName( void ) const throw();
 		int					getGrade( void ) const throw();
