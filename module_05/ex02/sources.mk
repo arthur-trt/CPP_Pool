@@ -2,9 +2,11 @@
 
 ## . ##
 
-SOURCES		+=           		\
-		main.cpp            	\
-		Bureaucrat.cpp      	\
-		Form.cpp            	\
+SOURCES		+=                      		\
+		RobotomyRequestForm.cpp        	\
+		AForm.cpp                      	\
+		main.cpp                       	\
+		Bureaucrat.cpp                 	\
+		ShrubberyCreationForm.cpp      	\
 
 

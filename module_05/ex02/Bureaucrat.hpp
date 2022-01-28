@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:13:14 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/25 14:52:37 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/28 10:13:57 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -49,7 +49,7 @@ class Bureaucrat
 		void				incGrade( void ) throw(Bureaucrat::GradeTooHighException);
 		void				decGrade( int dec ) throw(Bureaucrat::GradeTooLowExcepetion);
 		void				decGrade( void ) throw(Bureaucrat::GradeTooLowExcepetion);
-		void				signForm( Form * f ) const;
+		void				signForm( AForm * f ) const;
 
 		std::string			getName( void ) const throw();
 		int					getGrade( void ) const throw();

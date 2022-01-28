@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 11:10:28 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 12:09:29 by arthur           ###   ########.fr       */
+/*   Created: 2022/01/28 12:10:34 by arthur            #+#    #+#             */
+/*   Updated: 2022/01/28 12:16:30 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <string>
-# include <fstream>
+# include <ctime>
+# include <cstdlib>
 # include "AForm.hpp"
 
 class AForm;
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
-	public:
-		ShrubberyCreationForm( std::string target );
-		ShrubberyCreationForm( ShrubberyCreationForm const & src );
-		virtual ~ShrubberyCreationForm();
 
-		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
+	public:
+
+		RobotomyRequestForm( std::string target );
+		RobotomyRequestForm( RobotomyRequestForm const & src );
+		virtual ~RobotomyRequestForm();
+
+		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 		virtual bool	execute( Bureaucrat const & executor ) const throw(AForm::GradeTooLowException, AForm::FormNotSignedException);
 
 	private:
-		ShrubberyCreationForm();
+
+		RobotomyRequestForm();
 
 		std::string	_target;
-
 };
 
-#endif /* ******************************************* SHRUBBERYCREATIONFORM_H */
+#endif

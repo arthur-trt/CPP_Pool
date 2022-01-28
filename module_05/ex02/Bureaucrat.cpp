@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:13:16 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/25 14:53:29 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/01/28 10:13:40 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	Bureaucrat::decGrade( void ) throw(Bureaucrat::GradeTooLowExcepetion)
 	Bureaucrat::decGrade(1);
 }
 
-void	Bureaucrat::signForm( Form * f ) const
+void	Bureaucrat::signForm( AForm * f ) const
 {
 	try
 	{
