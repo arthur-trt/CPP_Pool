@@ -6,7 +6,7 @@
 /*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:10:37 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 12:27:17 by arthur           ###   ########.fr       */
+/*   Updated: 2022/01/28 12:48:07 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ bool	RobotomyRequestForm::execute( Bureaucrat const & executor ) const throw(AFo
 		std::cout << "BRZZZZ BRZZZ BRZZZ" << std::endl;
 		std::srand(std::time(NULL));
 		if ((std::rand() % 2 + 1) == 1)
-			std::cout << "Robotomy failed. We must try again !" << std::endl;
+			std::cout << this->_target << " robotomy failed. We must try again !" << std::endl;
 		else
-			std::cout << "It work ! He is under our control !" << std::endl;
+			std::cout << "It work ! " << this->_target << " is under our control !" << std::endl;
 		return (true);
 	}
 	return (false);
