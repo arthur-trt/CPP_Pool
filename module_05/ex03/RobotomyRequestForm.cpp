@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:10:37 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 12:48:07 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 12:05:44 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ bool	RobotomyRequestForm::execute( Bureaucrat const & executor ) const throw(AFo
 	return (false);
 }
 
+AForm	*RobotomyRequestForm::create( std::string const & target )
+{
+	return (new RobotomyRequestForm(target));
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

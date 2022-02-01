@@ -3,12 +3,12 @@
 ## . ##
 
 SOURCES		+=                       		\
-		RobotomyRequestForm.cpp         	\
+		ShrubberyCreationForm.cpp       	\
 		PresidentialPardonForm.cpp      	\
-		Intern.cpp                      	\
 		AForm.cpp                       	\
 		main.cpp                        	\
+		Intern.cpp                      	\
 		Bureaucrat.cpp                  	\
-		ShrubberyCreationForm.cpp       	\
+		RobotomyRequestForm.cpp         	\
 
 

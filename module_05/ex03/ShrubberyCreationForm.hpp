@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:10:28 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 12:09:29 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:46:41 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <string>
 # include <fstream>
 # include "AForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "ShrubberyCreationForm.hpp"
 
 class AForm;
 
@@ -30,6 +33,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
 		virtual bool	execute( Bureaucrat const & executor ) const throw(AForm::GradeTooLowException, AForm::FormNotSignedException);
+
+		static AForm	*create( std::string const & target );
 
 	private:
 		ShrubberyCreationForm();

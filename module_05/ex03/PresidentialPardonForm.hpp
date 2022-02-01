@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 20:38:10 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 20:40:29 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:25:46 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 		virtual bool	execute( Bureaucrat const & executor ) const throw(AForm::GradeTooLowException, AForm::FormNotSignedException);
+
+		static AForm	*create( std::string const & target );
 
 	private:
 

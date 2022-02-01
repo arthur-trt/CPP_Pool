@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:10:34 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 12:16:30 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:25:51 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 		virtual bool	execute( Bureaucrat const & executor ) const throw(AForm::GradeTooLowException, AForm::FormNotSignedException);
+
+		static AForm	*create( std::string const & target );
 
 	private:
 

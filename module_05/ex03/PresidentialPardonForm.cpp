@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 20:39:22 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 20:56:25 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 12:05:42 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ bool	PresidentialPardonForm::execute( Bureaucrat const & executor ) const throw(
 		return (true);
 	}
 	return (false);
+}
+
+AForm	*PresidentialPardonForm::create( std::string const & target )
+{
+	return (new PresidentialPardonForm(target));
 }
 
 /*

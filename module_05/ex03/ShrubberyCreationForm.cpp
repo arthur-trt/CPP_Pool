@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 11:10:26 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/28 11:51:26 by arthur           ###   ########.fr       */
+/*   Updated: 2022/02/01 13:46:37 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,16 @@ bool	ShrubberyCreationForm::execute( Bureaucrat const & executor ) const throw(A
 					<< "                         ;%@@@@%%:;;;.                    " << std::endl
 					<< "                     ...;%@@@@@%%:;;;;,..                 " << std::endl;
 			file.close();
+			std::cout << "Shrubbery " << this->getName().c_str() << " created" << std::endl;
 			return (true);
 		}
 	}
 	return (false);
+}
+
+AForm	*ShrubberyCreationForm::create( std::string const & target )
+{
+	return (new ShrubberyCreationForm(target));
 }
 
 /*

@@ -8,6 +8,11 @@
 # include "RobotomyRequestForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 
+class AForm;
+class PresidentialPardonForm;
+class RobotomyRequestForm;
+class ShrubberyCreationForm;
+
 class Intern
 {
 	class UnknowFormException : public std::exception
@@ -36,4 +41,4 @@ class Intern
 
 std::ostream &			operator<<( std::ostream & o, Intern const & i );
 
-#endif 
+#endif
