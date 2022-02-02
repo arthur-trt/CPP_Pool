@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 14:27:29 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/01 13:48:53 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/02 17:34:15 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,11 @@ int	main(void)
 	b1.executeForm(*f1);
 	b2.executeForm(*f2);
 	b3.executeForm(*f3);
+
+	delete f1;
+	delete f2;
+	delete f3;
+	delete f4;
 
 	return (0);
 }
