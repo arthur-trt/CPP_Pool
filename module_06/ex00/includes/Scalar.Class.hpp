@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 10:29:59 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/04 15:54:29 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/07 14:02:20 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <istream>
 # include <cstdlib>
 # include <exception>
+# include "functions.hpp"
 
 class Scalar
 {
@@ -30,11 +31,10 @@ private:
 	double				_double;
 	float				_float;
 
-	static const int	_noType		= 1;
-	static const int	_charType	= 2;
-	static const int	_intType	= 3;
-	static const int	_doubleType	= 4;
-	static const int	_floatType	= 5;
+	static const int	_charType	= 0;
+	static const int	_intType	= 1;
+	static const int	_doubleType	= 2;
+	static const int	_floatType	= 3;
 
 	int		typeIdentification( std::string entry ) const;
 
@@ -45,17 +45,20 @@ public:
 
 	Scalar	&operator=(Scalar const & rhs );
 
-
-
 	char	getChar( void ) const;
 	int		getInt( void ) const;
 	double	getDouble( void ) const;
 	float	getFloat( void ) const;
 
+	bool	convertFromChar( std::string entry );
+	bool	convertFromInt( std::string entry );
+	bool	convertFromDouble( std::string entry );
+	bool	convertFromFloat( std::string entry );
+
 	class NonValidInputExcpetion : public std::exception
 	{
 		public:
-			virtual const char *what() const
+			virtual const char *what() const throw()
 			{
 				return ("Input is netheir int, float, double or char");
 			}

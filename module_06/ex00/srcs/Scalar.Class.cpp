@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 10:46:50 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/04 15:55:15 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/07 14:05:20 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include <string>
 # include <iostream>
 # include <iomanip>
+# include <climits>
 # include <cctype>
 
 /*
@@ -32,6 +33,16 @@ Scalar::Scalar( std::string entry ) : _entry(entry)
 	#ifdef DEBUG
 		std::cout << "String constructor called" << std::endl;
 	#endif
+	int		type;
+	bool	((*fun[4])( std::string entry )) = {
+		&Scalar::convertFromChar,
+		&Scalar::convertFromInt,
+		&Scalar::convertFromDouble,
+		&Scalar::convertFromFloat,
+	};
+
+	type = typeIdentification(this->_entry);
+	fun[type](entry);
 	return ;
 }
 
@@ -98,12 +109,46 @@ int		Scalar::typeIdentification( std::string entry ) const
 		#endif
 		return (Scalar::_floatType);
 	}
-	// VALID INTUP
+	if (valid_input(entry) == false)
+		throw (Scalar::NonValidInputExcpetion());
+	if (entry.size() == 1 && (entry[0] > 31 && entry[0] < 127))
+		return (Scalar::_charType);
+	if (entry[entry.size() - 1] == 'f')
+		return (Scalar::_floatType);
+	if (entry.find('.') != std::string::npos)
+		return (Scalar::_doubleType);
+	return (Scalar::_intType);
+}
 
-	if (entry.at(entry.size()) != 'f' && isdigit(entry.at(entry.size())) != 0)
-	{
+bool	Scalar::convertFromChar( std::string entry )
+{
+	this->_char = static_cast<char>(entry[0]);
+	this->_int = static_cast<int>(entry[0]);
+	this->_double = static_cast<double>(entry[0]);
+	this->_float = static_cast<float>(entry[0]);
+	return true;
+}
 
-	}
+bool	Scalar::convertFromInt( std::string entry )
+{
+	this->_double = atof(entry.c_str());
+	this->_int = static_cast<int>(this->_double);
+	this->_float = static_cast<float>(this->_double);
+	if (this->_int >= CHAR_MIN && this->_int <= CHAR_MAX)
+		this->_char = static_cast<char>(this->_char);
+	return (true);
+}
+
+bool	Scalar::convertFromDouble( std::string entry)
+{
+	(void)entry;
+	return (true);
+}
+
+bool	Scalar::convertFromFloat( std::string entry)
+{
+	(void)entry;
+	return (true);
 }
 
 /*

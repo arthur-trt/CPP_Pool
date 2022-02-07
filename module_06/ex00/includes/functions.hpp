@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 12:23:08 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/07 13:01:18 by atrouill         ###   ########.fr       */
+/*   Created: 2022/02/07 10:16:49 by atrouill          #+#    #+#             */
+/*   Updated: 2022/02/07 10:35:09 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Scalar.Class.hpp"
-# include "functions.hpp"
-# include <string>
-# include <iostream>
-# include <cstdlib>
+#ifndef FUNCTIONS_HPP
+# define FUNCTIONS_HPP
 
-int	main( int argc, char *argv[] )
-{
-	//Scalar	test( argv[1] );
-	std::string	test(argv[1]);
+bool	valid_input( std::string entry );
 
-	if (argc > 2)
-	{
-		std::cerr << "Usage : ./convert <number_to_convert>" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	std::cout << valid_input(argv[1]) << std::endl;
-	return (EXIT_SUCCESS);
-}
+#endif
