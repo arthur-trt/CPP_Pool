@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:52:53 by atrouill          #+#    #+#             */
-/*   Updated: 2022/01/10 08:39:10 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:59:33 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Brain::Brain( void )
 {
-	std::srand(std::time(NULL));
+	std::srand(std::time(NULL) + (float)&this);
 	std::string	smiley[] = {
 		"😭",
 		"😂",

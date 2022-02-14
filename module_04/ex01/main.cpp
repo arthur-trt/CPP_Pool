@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:15:32 by arthur            #+#    #+#             */
-/*   Updated: 2022/01/10 09:55:32 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/03 11:58:40 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,22 @@ int	main(int argc, char **argv)
 		else
 			animals[i] = new Dog();
 	}
-	std::cout << "DEEP COPY :" << std::endl;
-	Cat	copy(* (Cat *)animals[0]);
-	for (size_t i = 0; i < NB_IDEAS; i++)
+	for (size_t j = 0; j < 3; j++)
 	{
-		std::cout << "Original : " << ((Cat *)animals[0])->getBrain()->getIdea(i) << std::endl;
-		std::cout << "Copy     : " << copy.getBrain()->getIdea(i) << std::endl;
+		for (size_t i = 0; i < 10; i++)
+		{
+			std::cout << ((Cat *)animals[j])->getBrain()->getIdea(i) << std::endl;
+		}
+		std::cout << "\n\n\n";
 	}
-	std::cout << "END COPY" << std::endl;
+//	std::cout << "DEEP COPY :" << std::endl;
+//	Cat	copy(* (Cat *)animals[0]);
+//	for (size_t i = 0; i < NB_IDEAS; i++)
+//	{
+//		std::cout << "Original : " << ((Cat *)animals[0])->getBrain()->getIdea(i) << std::endl;
+//		std::cout << "Copy     : " << copy.getBrain()->getIdea(i) << std::endl;
+//	}
+//	std::cout << "END COPY" << std::endl;
 	for (size_t i = 0; i < nb_ani; i++)
 	{
 		delete animals[i];
