@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 10:46:50 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/14 14:37:42 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/15 10:14:11 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,25 @@ Scalar::Scalar( std::string entry ) : _entry(entry)
 	{
 		this->_type = ERROR;
 	}
-	convert();
-	if (entry.find('.') != std::string::npos && this->_type != ERROR)
+	if (this->_type != ERROR)
 	{
-		std::string	tmp = entry.substr(entry.find('.') + 1, entry.size() - entry.find('.'));
-		this->_dot = tmp.size();
+		if (entry.find('.') != std::string::npos)
+		{
+			std::string	tmp = entry.substr(entry.find('.') + 1, entry.size() - entry.find('.'));
+			this->_dot = tmp.size();
+			if (this->_type == 4)
+				this->_dot--;
+		}
+		else
+		{
+			this->_dot = 1;
+		}
 	}
+	#ifdef DEBUG
+		std::cout	<< "Type : " << this->_type << std::endl
+					<< "Dot : " << this->_dot << std::endl;
+	#endif
+	convert();
 	return ;
 }
 
@@ -96,6 +109,11 @@ bool	Scalar::isChar( std::string entry )
 {
 	if (entry.size() != 1 || std::isprint(entry[0]) == false)
 		return (false);
+	if (entry[0] >= 48 && entry[0] <= 57)
+		return (false);
+	#ifdef DEBUG
+		std::cout << "Char detected" << std::endl;
+	#endif
 	this->_char = entry[0];
 	this->_type = CHAR;
 	return (true);
@@ -109,6 +127,9 @@ bool	Scalar::isInt( std::string entry )
 	ret = std::strtol(entry.c_str(), &after, 10);
 	if (*after != '\0' || ret < INT_MIN || ret > INT_MAX)
 		return (false);
+	#ifdef DEBUG
+		std::cout << "Int detected" << std::endl;
+	#endif
 	this->_int = static_cast<int>(ret);
 	this->_type = INT;
 	return (true);
@@ -116,12 +137,15 @@ bool	Scalar::isInt( std::string entry )
 
 bool	Scalar::isDouble( std::string entry )
 {
-	char		*after = NULL;
-	long double	ret;
+	char	*after = NULL;
+	double	ret;
 
-	ret = std::strtold(entry.c_str(), &after);
-	if (*after != '\0' || ret < DBL_MIN || ret > DBL_MAX)
+	ret = std::strtod(entry.c_str(), &after);
+	if (*after != '\0')
 		return (false);
+	#ifdef DEBUG
+		std::cout << "Double detected" << std::endl;
+	#endif
 	this->_double = static_cast<double>(ret);
 	this->_type = DOUBLE;
 	return (true);
@@ -133,8 +157,11 @@ bool	Scalar::isFloat( std::string entry )
 	float	ret;
 
 	ret = std::strtof(entry.c_str(), &after);
-	if (*after != 'f' || (*after + 1) != '\0')
-		return (0);
+	if (*after != 'f' && (*after + 1) != '\0')
+		return (false);
+	#ifdef DEBUG
+		std::cout << "Float detected" << std::endl;
+	#endif
 	this->_flag = static_cast<float>(ret);
 	this->_type = FLOAT;
 	return (true);
