@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 11:16:36 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/15 11:28:36 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/15 11:36:03 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Base	*generate(void)
 	Base	*instance = NULL;
 
 	srand(time(NULL));
-	random = rand() % 3;
+	random = rand() % 3 + 1;
 	std::cout << random << std::endl;
 	if (random == 1)
 	{
