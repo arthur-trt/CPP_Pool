@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 10:46:50 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/15 10:14:11 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:08:29 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ bool	Scalar::isFloat( std::string entry )
 	#ifdef DEBUG
 		std::cout << "Float detected" << std::endl;
 	#endif
-	this->_flag = static_cast<float>(ret);
+	this->_float = static_cast<float>(ret);
 	this->_type = FLOAT;
 	return (true);
 }
