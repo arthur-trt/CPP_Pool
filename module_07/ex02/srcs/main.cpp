@@ -18,6 +18,7 @@
 # define BLUE3 "\x1B[34;1m"
 # define END "\033[0m"
 
+/*
 void	testSubject(void)
 {
 	Array<int> numbers(MAX_VAL);
@@ -150,4 +151,13 @@ int main(void)
 		std::cerr << e.what() << '\n';
 	}
 	return 0;
+}*/
+
+int	main(void)
+{
+	const Array<int> test(10);
+
+	test[4] = 12;
+	std::cout << test[4] << std::endl;
+	return (0);
 }

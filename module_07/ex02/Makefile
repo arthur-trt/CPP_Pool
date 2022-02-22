@@ -54,7 +54,7 @@ C_SUCCESS			:= \033[0;32m
 ECHO				:= echo
 
 # Escape sequences (ANSI/VT100)
-ES_ERASE			:= "\033[1A\033[2K\033[1A"
+#ES_ERASE			:= "\033[1A\033[2K\033[1A"
 ERASE				:= $(ECHO) $(ES_ERASE)
 
 GREP				:= grep --color=auto --exclude-dir=.git
@@ -93,7 +93,7 @@ fclean: clean
 # Link
 $(TARGETDIR)/$(TARGET): $(OBJECTS)
 	@mkdir -p $(TARGETDIR)
-	$(CXX) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
+	$(CXX) $(CPPFLAGS) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
 
 # Link Bonus
 $(TARGETDIR)/$(TARGET_BONUS): $(OBJECTS_BONUS)

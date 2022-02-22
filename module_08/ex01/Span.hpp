@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 15:57:02 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/18 14:58:26 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:44:51 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <exception>
 # include <climits>
 
+typedef	std::vector<int>::iterator	vecIt;
 class Span
 {
 	public:
@@ -53,7 +54,9 @@ class Span
 
 		Span	&operator=( const Span & rhs ) throw();
 
-		bool	addMember( int n ) throw(Span::StorageFullException);
+		bool	addNumber( int n ) throw(Span::StorageFullException);
+		bool	addNumber( vecIt it, vecIt ite ) throw(Span::StorageFullException);
+		bool	addNumber( int value, size_t count ) throw(Span::StorageFullException);
 
 		long	shortestSpan( void ) const throw (Span::NotEnoughValueException);
 		long	longestSpan( void ) const throw (Span::NotEnoughValueException);

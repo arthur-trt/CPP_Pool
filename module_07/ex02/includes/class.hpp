@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 12:21:25 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/15 13:46:21 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/21 09:41:53 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Array
 		{
 			for (size_t i = 0; i < this->_size; i++)
 			{
-				_array[i] = 0;
+				_array[i] = T();
 			}
 		}
 

@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:11:56 by atrouill          #+#    #+#             */
-/*   Updated: 2022/02/18 15:21:52 by atrouill         ###   ########.fr       */
+/*   Updated: 2022/02/22 09:50:28 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Span	&Span::operator=( const Span & rhs ) throw()
 /*
 **	MEMBERS FUNCTIONS
 */
-bool	Span::addMember( int n ) throw(Span::StorageFullException)
+bool	Span::addNumber( int n ) throw(Span::StorageFullException)
 {
 	if (this->_values.size() >= this->_size)
 	{
@@ -62,6 +62,38 @@ bool	Span::addMember( int n ) throw(Span::StorageFullException)
 	else
 	{
 		this->_values.push_back(n);
+		return (true);
+	}
+}
+
+bool	Span::addNumber( vecIt it, vecIt ite ) throw(Span::StorageFullException)
+{
+	while (it != ite)
+	{
+		if (this->_values.size() >= this->_size)
+		{
+			throw Span::StorageFullException();
+			return (false);
+		}
+		else
+		{
+			this->_values.push_back(*it);
+			it++;
+		}
+	}
+	return (true);
+}
+
+bool	Span::addNumber( int value, size_t count ) throw(Span::StorageFullException)
+{
+	if ((this->_values.size() + count) >= this->_size)
+	{
+		throw Span::StorageFullException();
+		return (false);
+	}
+	else
+	{
+		this->_values.insert(this->_values.end(), count, value);
 		return (true);
 	}
 }
